@@ -18,9 +18,9 @@ class ParallaxTableHeaderView: UIView {
         self.init(frame: CGRectMake(0, 0, size.width, size.height))
         
         self.scrollView = UIScrollView(frame: self.bounds)
-        self.scrollView.autoresizingMask = .FlexibleLeftMargin | .FlexibleRightMargin | .FlexibleTopMargin | .FlexibleBottomMargin | .FlexibleHeight | .FlexibleWidth
+        self.scrollView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleHeight, .FlexibleWidth]
         self.subView = subView
-        self.subView.autoresizingMask = .FlexibleLeftMargin | .FlexibleRightMargin | .FlexibleTopMargin | .FlexibleBottomMargin | .FlexibleHeight | .FlexibleWidth
+        self.subView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleHeight, .FlexibleWidth]
         self.scrollView.addSubview(self.subView)
         self.addSubview(self.scrollView)
     }
@@ -28,7 +28,7 @@ class ParallaxTableHeaderView: UIView {
     /**
     Layout the content of the header view to give the parallax feeling.
 
-    :param: contentOffset scroll views content offset
+    - parameter contentOffset: scroll views content offset
     */
     func layoutForContentOffset(contentOffset: CGPoint) {
         var frame = self.scrollView.frame

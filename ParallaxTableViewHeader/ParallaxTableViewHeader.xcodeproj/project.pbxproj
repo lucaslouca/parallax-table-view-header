@@ -159,6 +159,7 @@
 		A050508E1B29403E00D0F38E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Lucas Louca";
 				TargetAttributes = {
@@ -413,6 +414,7 @@
 				A05050B71B29403E00D0F38E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A05050B81B29403E00D0F38E /* Build configuration list for PBXNativeTarget "ParallaxTableViewHeaderTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +423,7 @@
 				A05050BA1B29403E00D0F38E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

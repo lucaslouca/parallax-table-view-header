@@ -18,7 +18,6 @@ class ParallaxTableHeaderView: UIView {
         self.init(frame: CGRectMake(0, 0, size.width, size.height))
         
         self.scrollView = UIScrollView(frame: self.bounds)
-        self.scrollView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleHeight, .FlexibleWidth]
         self.subView = subView
         self.subView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleHeight, .FlexibleWidth]
         self.scrollView.addSubview(self.subView)
@@ -40,12 +39,12 @@ class ParallaxTableHeaderView: UIView {
             self.clipsToBounds = true
         } else {
             var delta: CGFloat = 0.0
-            var rect: CGRect = defaultHeaderFrame;
+            var rect: CGRect = defaultHeaderFrame
             delta = fabs(contentOffset.y)
             rect.origin.y -= delta
             rect.size.height += delta
             self.scrollView.frame = rect
-            self.clipsToBounds = true
+            self.clipsToBounds = false
         }
     }
 }

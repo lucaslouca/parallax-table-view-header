@@ -6,7 +6,8 @@ Sample code illustrating how to implement a parallax scrolling table view header
 
 ### How to use
 Create a new `ParallaxTableHeaderView` with a given size and subview as content:
-```swift
+
+```
 var mapView = MKMapView(frame: CGRectMake(0,0, self.view.frame.width, tableHeaderViewHeight))
 var tableHeaderView = ParallaxTableHeaderView(size: CGSizeMake(self.view.frame.width, tableHeaderViewHeight), subView: mapView)
 tableView.tableHeaderView = tableHeaderView
@@ -14,8 +15,10 @@ tableView.delegate = self
 ```
 
 <br>
+
 Implement the `UIScrollViewDelegate` func, to layout the header view when the table view scrolls:
-```swift
+
+```
 func scrollViewDidScroll(scrollView: UIScrollView) {
   let header: ParallaxTableHeaderView = self.tableView.tableHeaderView as! ParallaxTableHeaderView
   header.layoutForContentOffset(tableView.contentOffset)

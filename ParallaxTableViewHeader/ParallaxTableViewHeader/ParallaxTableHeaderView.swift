@@ -15,11 +15,11 @@ class ParallaxTableHeaderView: UIView {
     var subView: UIView!
     
     convenience init(size: CGSize, subView:UIView) {
-        self.init(frame: CGRectMake(0, 0, size.width, size.height))
+        self.init(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         
         self.scrollView = UIScrollView(frame: self.bounds)
         self.subView = subView
-        self.subView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleHeight, .FlexibleWidth]
+        self.subView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleBottomMargin, .flexibleHeight, .flexibleWidth]
         self.scrollView.addSubview(self.subView)
         self.addSubview(self.scrollView)
     }
@@ -29,9 +29,9 @@ class ParallaxTableHeaderView: UIView {
 
     - parameter contentOffset: scroll views content offset
     */
-    func layoutForContentOffset(contentOffset: CGPoint) {
+    func layoutForContentOffset(_ contentOffset: CGPoint) {
         var frame = self.scrollView.frame
-        defaultHeaderFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+        defaultHeaderFrame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         
         if (contentOffset.y > 0) {
             frame.origin.y = contentOffset.y * parallaxDeltaFactor

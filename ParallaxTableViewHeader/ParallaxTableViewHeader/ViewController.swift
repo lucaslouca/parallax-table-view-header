@@ -21,8 +21,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // Set the table views header cell and delegate
         let tableHeaderViewHeight:CGFloat = 400
-        let mapView = MKMapView(frame: CGRectMake(0,0, self.view.frame.width, tableHeaderViewHeight))
-        let tableHeaderView = ParallaxTableHeaderView(size: CGSizeMake(self.view.frame.width, tableHeaderViewHeight), subView: mapView)
+        let mapView = MKMapView(frame: CGRect(x: 0,y: 0, width: self.view.frame.width, height: tableHeaderViewHeight))
+        let tableHeaderView = ParallaxTableHeaderView(size: CGSize(width: self.view.frame.width, height: tableHeaderViewHeight), subView: mapView)
         tableView.tableHeaderView = tableHeaderView
         
         tableView.delegate = self
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     /**
     Layout header content when table view scrolls
     */
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let header: ParallaxTableHeaderView = self.tableView.tableHeaderView as! ParallaxTableHeaderView
         header.layoutForContentOffset(tableView.contentOffset)
         self.tableView.tableHeaderView = header
@@ -46,16 +46,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 // MARK: - UITableViewDataSource
 extension ViewController {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as UITableViewCell
         
         let row = indexPath.row
         cell.textLabel?.text = items[row]
